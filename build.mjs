@@ -37,6 +37,8 @@ const ctx = await esbuild.context({
     //Node Addonsはそのままコピーする
     '.node': 'copy',
   },
+  minify: isDev ? false : true,
+  sourcemap: isDev,
 });
 
 const settingsFile = path.join(DIST_PATH, DIR_NAME, 'settings.json');
@@ -61,7 +63,7 @@ fs.writeFileSync(settingsFile, JSON.stringify(settingsJson, null, '  '), {
 if (isDev) {
   // 開発モードならwatch
   console.log('👀 Watching files for changes ->', outfile);
-  await ctx.watch();
+  await ctx.watch({});
 } else {
   // リリースならそのまま出力
   await ctx.rebuild();
