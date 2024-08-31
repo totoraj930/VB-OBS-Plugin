@@ -39,6 +39,25 @@ const ctx = await esbuild.context({
   },
 });
 
+const settingsFile = path.join(DIST_PATH, DIR_NAME, 'settings.json');
+const settingsJson = {
+  url: 'http://localhost',
+  port: '4455',
+  pass: '',
+};
+
+if (isDev) {
+  settingsJson.url = process.env.DEV_URL ?? settingsJson.url;
+  settingsJson.port = process.env.DEV_PORT ?? settingsJson.port;
+  settingsJson.pass = process.env.DEV_PASS ?? settingsJson.pass;
+}
+
+fs.mkdirSync(path.join(DIST_PATH, DIR_NAME), { recursive: true });
+
+fs.writeFileSync(settingsFile, JSON.stringify(settingsJson, null, '  '), {
+  encoding: 'utf-8',
+});
+
 if (isDev) {
   // 開発モードならwatch
   console.log('👀 Watching files for changes ->', outfile);
