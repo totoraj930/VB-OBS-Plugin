@@ -29,6 +29,8 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "@virtu-button/common": "github:totoraj930/VirtuButton#main&path:common"
+    "@virtu-button/common": "github:totoraj930/VirtuButton#main&path:common",
+    "obs-websocket-js": "^5.0.6",
+    "zod": "^3.23.8"
   }
 }
