@@ -1,0 +1,34 @@
+{
+  "name": "vb-plugin-template",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "author": "Reona Oshima(totoraj)",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json --composite false",
+    "format": "prettier --write .",
+    "dev": "node --no-warnings=ExperimentalWarning build.mjs --dev",
+    "build": "pnpm format && node --no-warnings=ExperimentalWarning build.mjs"
+  },
+  "packageManager": "pnpm@9.9.0",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9",
+    "npm": "use pnpm please!",
+    "yarn": "use pnpm please!"
+  },
+  "peerDependencies": {
+    "electron": "^32.0.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "esbuild": "^0.23.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@virtu-button/common": "github:totoraj930/VirtuButton#main&path:common"
+  }
+}
