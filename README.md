@@ -1,44 +1,12 @@
-# VirtuButton Plugin Template
+# OBS連携プラグイン(VirtuButton)
 
-VirtuButtonのプラグインテンプレートです。
+VirtuButtonをOBSと連携させるプラグインです。
 
-## 使い方
+OBS関連のボタンとアクション、イベントが追加されます。
 
-- node >= 20
-- pnpm >= 9
+ダウンロードはこちら↓
 
-```shell
-# クローン
-git clone https://github.com/totoraj930/vb-plugin-template.git your-plugin-name
-
-# クローンしたディレクトリに移動
-cd your-plugin-name
-
-# 依存関係のインストール
-pnpm install
-```
-
-### デバッグ
-
-.envファイルの`DEV_DIST`で指定されたディレクトリに出力されます。
-
-詳しくは`build.mjs`を確認してください。
-
-```shell
-pnpm dev
-```
-
-### ビルド
-
-```shell
-pnpm build
-```
-
-### @virtu-button/commonの更新
-
-```shell
-pnpm update @virtu-button/common
-```
+[VB-OBS-Plugin/releases](https://github.com/totoraj930/VB-OBS-Plugin/releases)
 
 ## ライセンス
 
